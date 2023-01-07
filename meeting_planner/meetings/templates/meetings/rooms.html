@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Welcome!</title>
+        <title>Rooms List</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
@@ -16,22 +16,15 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1>Welcome to the Meeting Planner</h1>
-        <p>
-            This is a demo application for the course <em>Django: Getting Started</em> on Pluralsight
-        </p>
-        
-        <h2>Meetings</h2>
+        <h1>Available Rooms</h1>
         <ul>
-            {% for meeting in meetings %}
-                <li>
-                    <a href="{% url 'detail' meeting.id %}">
-                        {{ meeting.title }}
-                    </a>
-                </li>
+            {% for room in rooms %}
+            <li>
+                {{ room }}
+            </li>
             {% endfor %}
         </ul>
-        
-        <h3> <a href="{% url 'rooms' %}">Click here to see a list of available rooms</a> </h3>
+
+        <a href="{% url 'welcome' %}">< Go Home </a>
     </body>
 </html>
